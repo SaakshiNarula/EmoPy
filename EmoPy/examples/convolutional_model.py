@@ -16,8 +16,7 @@ print('Loading data...')
 directory_path = resource_filename('EmoPy.examples','image_data/sample_image_directory')
 data_loader = DirectoryDataLoader(datapath=directory_path, validation_split=validation_split)
 dataset = data_loader.load_data()
-print(dataset)
-"""
+
 if verbose:
     dataset.print_data_details()
 
@@ -34,4 +33,4 @@ model.fit_generator(train_gen.generate(target_dimensions, batch_size=5),
                     epochs=5)
 
 # Save model configuration
-# model.export_model('output/conv2d_model.json','output/conv2d_weights.h5',"output/conv2d_emotion_map.json", emotion_map)"""
+# model.export_model('output/conv2d_model.json','output/conv2d_weights.h5',"output/conv2d_emotion_map.json", emotion_map)

@@ -1,13 +1,13 @@
 
 class Dataset():
 
-    def __init__(self, train_images, test_images, val_images, train_labels, test_labels, val_labels, emotion_index_map, time_delay=None):
+    def __init__(self, train_images, test_images, train_labels, test_labels, emotion_index_map, time_delay=None):
         self._train_images = train_images
         self._test_images = test_images
         self._train_labels = train_labels
         self._test_labels = test_labels
-        self._val_images = val_images
-        self._val_labels = val_labels
+        #self._val_images = val_images
+        #self._val_labels = val_labels
         self._emotion_index_map = emotion_index_map
         self._time_delay = time_delay
 
@@ -17,8 +17,8 @@ class Dataset():
     def get_test_data(self):
         return self._test_images, self._test_labels
     
-    def get_val_data(self):
-        return self._val_images, self._val_labels
+    #def get_val_data(self):
+        #return self._val_images, self._val_labels
 
     def get_emotion_index_map(self):
         return self._emotion_index_map
@@ -32,15 +32,15 @@ class Dataset():
     def num_train_images(self):
         return len(self._train_images)
     
-    def num_val_images(self):
-        return len(self._val_images)
+   # def num_val_images(self):
+      #  return len(self._val_images)
 
     def num_images(self):
-        return self.num_train_images() + self.num_test_images() + self.num_val_images()
+        return self.num_train_images() + self.num_test_images()
 
     def print_data_details(self):
         print('\nDATASET DETAILS')
         print('%d image samples' % (self.num_images()))
         print('%d training samples' % self.num_train_images())
         print('%d test samples\n' % self.num_test_images())
-        print('%d validation samples\n' % self.num_val_images())
+        #print('%d validation samples\n' % self.num_val_images())

@@ -31,6 +31,6 @@ model = ConvolutionalNN(target_dimensions, channels, dataset.get_emotion_index_m
 model.fit_generator(train_gen.generate(target_dimensions, batch_size=5),
                     test_gen.generate(target_dimensions, batch_size=5),
                     epochs=5)
-
+model.predict(resource_filename('EmoPy.examples','image_data/sample_anger_image2.png'))
 # Save model configuration
 # model.export_model('output/conv2d_model.json','output/conv2d_weights.h5',"output/conv2d_emotion_map.json", emotion_map)

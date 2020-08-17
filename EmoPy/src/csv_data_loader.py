@@ -14,7 +14,7 @@ class CSVDataLoader(_DataLoader):
     :param csv_image_col: Index of image column in csv.
     :param out_channels: Number of image channels.
     """
-    def __init__(self, target_emotion_map, datapath=None, validation_split=0.2, image_dimensions=None, csv_label_col=None, csv_image_col=None, out_channels=1):
+    def __init__(self, target_emotion_map = None, datapath=None, validation_split=0.2, image_dimensions=None, csv_label_col=None, csv_image_col=None, out_channels=1):
         self.target_emotion_map = target_emotion_map
         self.datapath = datapath
         self.image_dimensions = image_dimensions

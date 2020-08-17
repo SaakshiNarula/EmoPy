@@ -35,8 +35,9 @@ class _DataLoader(object):
         :return: Dataset object containing image and label data.
         """
         train_images, test_images, train_labels, test_labels = train_test_split(images, labels, test_size=self.validation_split, random_state=42, stratify=labels)
-        train_images, val_images, train_labels, val_labels = train_test_split(train_images, train_labels, test_size=self.validation_split, random_state=42, stratify=labels)
-        dataset = Dataset(train_images, test_images, val_images, train_labels, test_labels, val_labels, emotion_index_map, self.time_delay)
+        #train_images, val_images, train_labels, val_labels = train_test_split(train_images, train_labels, test_size=self.validation_split, random_state=42, stratify=labels)
+        #dataset = Dataset(train_images, test_images, val_images, train_labels, test_labels, val_labels, emotion_index_map, self.time_delay)
+        dataset = Dataset(train_images, test_images, train_labels, test_labels, emotion_index_map, self.time_delay)
         return dataset
 
     def _validate_arguments(self):

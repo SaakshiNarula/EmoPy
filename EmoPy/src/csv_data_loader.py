@@ -78,4 +78,7 @@ class CSVDataLoader(_DataLoader):
             # check image dimensions
             pixels = next(reader)[self.csv_image_col].split(' ')
             if len(pixels) != self.image_dimensions[0] * self.image_dimensions[1]:
+                print(self.image_dimensions[0])
+                print(self.image_dimensions[1])
+                print(len(pixels))
                 raise ValueError('Invalid image dimensions: %s' % str(self.image_dimensions))

@@ -50,6 +50,7 @@ class CSVDataLoader(_DataLoader):
                 images.append(image)
 
         vectorized_labels = self._vectorize_labels(emotion_index_map, labels)
+        print(images)
         self._check_data_not_empty(images)
 
         return self._load_dataset(np.array(images), np.array(vectorized_labels), emotion_index_map)

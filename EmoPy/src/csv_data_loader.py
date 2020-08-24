@@ -46,6 +46,7 @@ class CSVDataLoader(_DataLoader):
 
                 image = np.asarray([int(pixel) for pixel in row[self.csv_image_col].split(' ')], dtype=np.uint8).reshape(self.image_dimensions)
                 image = self._reshape(image)
+                print(image)
                 images.append(image)
 
         vectorized_labels = self._vectorize_labels(emotion_index_map, labels)

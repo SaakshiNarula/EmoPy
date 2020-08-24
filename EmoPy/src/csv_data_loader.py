@@ -34,8 +34,11 @@ class CSVDataLoader(_DataLoader):
         labels = list()
         emotion_index_map = dict()
         with open(self.datapath) as csv_file:
+            print('1')
             reader = csv.reader(csv_file, delimiter=',', quotechar='"')
+            print('2')
             for row in reader:
+                print('3')
                 label_class = row[self.csv_label_col]
                 if label_class not in self.target_emotion_map.keys():
                     continue
@@ -43,7 +46,7 @@ class CSVDataLoader(_DataLoader):
                 if label_class not in emotion_index_map.keys():
                     emotion_index_map[label_class] = len(emotion_index_map.keys())
                 labels.append(label_class)
-
+                print('4')
                 image = np.asarray([int(pixel) for pixel in row[self.csv_image_col].split(' ')], dtype=np.uint8).reshape(self.image_dimensions)
                 image = self._reshape(image)
                 print(image)

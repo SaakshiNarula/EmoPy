@@ -42,6 +42,7 @@ class CSVDataLoader(_DataLoader):
                 label_class = row[self.csv_label_col]
                 print(label_class)
                 print(self.target_emotion_map.keys())
+                print(label_class not in self.target_emotion_map.keys())
                 if label_class not in self.target_emotion_map.keys():
                     continue
                 label_class = self.target_emotion_map[label_class]

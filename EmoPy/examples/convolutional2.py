@@ -35,3 +35,15 @@ model.fit_generator(train_gen.generate(target_dimensions, batch_size=5),
 
 # Save model configuration
 # model.export_model('output/conv2d_model.json','output/conv2d_weights.h5',"output/conv2d_emotion_map.json", emotion_map)
+
+from skimage import io
+img = image.load_img('EmoPy/examples/image_data/sample_happy_image.png', grayscale=True, target_size=(48, 48))
+#show_img=image.load_img('../input/myimage/Shawon.jpg', grayscale=False, target_size=(200, 200))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis = 0)
+
+x /= 255
+
+custom = model.predict(x)
+print(custom[0])
+print(custom)

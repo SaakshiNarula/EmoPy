@@ -14,7 +14,7 @@ verbose = True
 print('--------------- Convolutional Model -------------------')
 print('Loading data...')
 csv_path = resource_filename('EmoPy.examples','image_data/sample.csv')
-target_emotion_map = {0:'happy', 1:'disgust', 2: 'surprise', 3:'sad', 4:'angry', 5:'fear', 6:'neutral'}
+target_emotion_map = {'0':'happy', '1':'disgust', '2': 'surprise', '3':'sad', '4':'angry', '5':'fear', '6':'neutral'}
 data_loader = CSVDataLoader(datapath=csv_path, target_emotion_map = target_emotion_map, image_dimensions = (48,48) , csv_label_col = 0, csv_image_col = 1, validation_split=validation_split)
 dataset = data_loader.load_data()
 

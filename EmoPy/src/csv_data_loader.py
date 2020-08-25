@@ -42,8 +42,11 @@ class CSVDataLoader(_DataLoader):
                 label_class = row[self.csv_label_col]
                 print(label_class)
                 print(self.target_emotion_map.keys())
-                print(int(label_class) not in list(self.target_emotion_map.keys()))
-                if int(label_class) not in list(self.target_emotion_map.keys()):
+                try:
+                    print(int(label_class) not in list(self.target_emotion_map.keys()))
+                    if int(label_class) not in list(self.target_emotion_map.keys()):
+                        continue
+                except:
                     continue
                 label_class = self.target_emotion_map[label_class]
                 if label_class not in emotion_index_map.keys():

@@ -3,6 +3,8 @@ from EmoPy.src.csv_data_loader import CSVDataLoader
 from EmoPy.src.data_generator import DataGenerator
 from EmoPy.src.neuralnets import ConvolutionalNN
 
+from keras.preprocessing import image
+from keras.preprocessing.image import ImageDataGenerator
 from pkg_resources import resource_filename,resource_exists
 
 validation_split = 0.15
